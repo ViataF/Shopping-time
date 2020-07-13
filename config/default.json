@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://vee123:vee123@shopping-time.h5qbd.mongodb.net/ShoppingTime?retryWrites=true&w=majority"
+}
