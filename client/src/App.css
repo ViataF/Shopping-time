@@ -1,8 +1,12 @@
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-section {
+  height: 91vh;
+  background-color: blue;
+}
+.about-section {
+  height: 100vh;
+  background-color: tomato;
+}
+.contact-section {
+  height: 100vh;
+  background-color: green;
 }
