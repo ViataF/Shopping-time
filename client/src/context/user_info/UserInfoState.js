@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { uuid as u4 } from "uuid";
+import { v4 as uuid } from "uuid";
 import UserInfoContext from "./userInfoContext";
 import userInfoReducer from "./userInfoReducer";
 import {
@@ -18,7 +18,13 @@ const UserInfoState = (props) => {
       {
         id: 1,
         name: "jack and jill",
-        email: "jill@fmail.com",
+        email: "jill@gmail.com",
+        phone: "1234-123-123",
+      },
+      {
+        id: 2,
+        name: "jack and jill",
+        email: "jack@gmail.com",
         phone: "1234-123-123",
       },
     ],
@@ -26,6 +32,13 @@ const UserInfoState = (props) => {
   const [state, dispatch] = useReducer(userInfoReducer, initialState);
 
   //  Add info
+  const addUserInfo = (userInfo) => {
+    userInfo.id = uuid();
+    dispatch({
+      type: ADD_INFO,
+      payload: userInfo,
+    });
+  };
 
   //  Delete info
 
@@ -43,6 +56,7 @@ const UserInfoState = (props) => {
     <UserInfoContext.Provider
       value={{
         userInfo: state.userInfo,
+        addUserInfo,
       }}
     >
       {props.children}
