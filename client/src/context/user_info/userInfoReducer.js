@@ -15,6 +15,41 @@ export default (state, action) => {
         ...state,
         userInfo: [...state.userInfo, action.payload],
       };
+    case UPDATE_INFO:
+      return {
+        ...state,
+        userInfo: state.userInfo.map((user) =>
+          user.id === action.payload.id ? action.payload : user
+        ),
+      };
+    case DELETE_INFO:
+      return {
+        ...state,
+        userInfo: state.userInfo.filter((user) => user.id !== action.payload),
+      };
+    case SET_CURRENT:
+      return {
+        ...state,
+        current: action.payload,
+      };
+    case CLEAR_CURRENT:
+      return {
+        ...state,
+        current: null,
+      };
+    case FILTER_INFO:
+      return {
+        ...state,
+        filtered: state.userInfo.filter((user) => {
+          const regex = new RegExp(`${action.payload}`, "gi");
+          return user.name.match(regex) || user.email.match(regex);
+        }),
+      };
+    case CLEAR_FILTER:
+      return {
+        ...state,
+        filtered: null,
+      };
     default:
       return state;
   }

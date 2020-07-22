@@ -28,6 +28,8 @@ const UserInfoState = (props) => {
         phone: "1234-123-123",
       },
     ],
+    current: null,
+    filtered: null,
   };
   const [state, dispatch] = useReducer(userInfoReducer, initialState);
 
@@ -41,22 +43,57 @@ const UserInfoState = (props) => {
   };
 
   //  Delete info
+  const deleteUser = (id) => {
+    dispatch({
+      type: DELETE_INFO,
+      payload: id,
+    });
+  };
 
   // Set current
-
+  const setCurrent = (user) => {
+    dispatch({
+      type: SET_CURRENT,
+      payload: user,
+    });
+  };
   // Clear current info
-
+  const clearCurrent = () => {
+    dispatch({
+      type: CLEAR_CURRENT,
+    });
+  };
   // Update info
-
+  const updateInfo = (user) => {
+    dispatch({
+      type: UPDATE_INFO,
+      payload: user,
+    });
+  };
   // Filter info
-
+  const filterInfo = (text) => {
+    dispatch({ type: FILTER_INFO, payload: text });
+  };
   // Clear Filter
+  const clearFilter = () => {
+    dispatch({
+      type: CLEAR_FILTER,
+    });
+  };
 
   return (
     <UserInfoContext.Provider
       value={{
         userInfo: state.userInfo,
+        current: state.current,
+        filtered: state.filtered,
         addUserInfo,
+        deleteUser,
+        setCurrent,
+        clearCurrent,
+        updateInfo,
+        clearFilter,
+        filterInfo,
       }}
     >
       {props.children}
