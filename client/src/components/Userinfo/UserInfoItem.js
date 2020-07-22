@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import UserInfoContext from "../../context/user_info/userInfoContext";
 
 const UserInfoItem = ({ user }) => {
+  const userInfoContext = useContext(UserInfoContext);
+  const { deleteUser, setCurrent, clearCurrent } = userInfoContext;
   const { id, name, email, phone } = user;
+
+  const onDelete = () => {
+    deleteUser(id);
+    clearCurrent();
+  };
   return (
     <div className="card bg-light">
       <h3 className="text-primary text-left">
@@ -25,8 +33,12 @@ const UserInfoItem = ({ user }) => {
         )}
       </ul>
       <p>
-        <button className="btn btn-dark">Edit</button>
-        <button className="btn btn-dark">Delete</button>
+        <button className="btn btn-dark" onClick={() => setCurrent(user)}>
+          Edit
+        </button>
+        <button className="btn btn-dark" onClick={onDelete}>
+          Delete
+        </button>
       </p>
     </div>
   );
