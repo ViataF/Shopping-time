@@ -1,14 +1,30 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+
 import UserInfoContext from "../../context/user_info/userInfoContext";
 
 const UserForm = () => {
   const userInfoContext = useContext(UserInfoContext);
+
+  const { addUserInfo, updateInfo, clearCurrent, current } = userInfoContext;
+
+  useEffect(() => {
+    if (current !== null) {
+      setUserInfo(current);
+    } else {
+      setUserInfo({
+        name: "",
+        email: "",
+        phone: "",
+      });
+    }
+  }, [userInfoContext, current]);
 
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
     phone: "",
   });
+
   const { name, email, phone } = userInfo;
 
   const onChange = (e) =>
@@ -19,17 +35,22 @@ const UserForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    userInfoContext.addUserInfo(userInfo);
-    setUserInfo({
-      name: "",
-      email: "",
-      phone: "",
-    });
+    if (current === null) {
+      addUserInfo(userInfo);
+    } else {
+      updateInfo(userInfo);
+    }
+    clearAll();
+  };
+  const clearAll = () => {
+    clearCurrent();
   };
 
   return (
     <form onSubmit={onSubmit}>
-      <h2 className="white-text">Add Info</h2>
+      <h2 className="white-text">
+        {current ? "Edit Information" : "Add Information"}
+      </h2>
       <input
         type="text"
         placeholder="Name"
@@ -67,7 +88,11 @@ const UserForm = () => {
       />
       categorie{" "}
       <div>
-        <input type="submit" value="Add info" className="btn" />
+        <input
+          type="submit"
+          value={current ? "Update Information" : "Add Information"}
+          className="btn"
+        />
       </div>
       <select id="categorie">
         {" "}
@@ -76,6 +101,13 @@ const UserForm = () => {
         <option value="3">three</option>
         <option value="4">four</option>
       </select>
+      {current && (
+        <div>
+          <button className="btn" onClick={clearAll}>
+            Clear
+          </button>
+        </div>
+      )}
     </form>
   );
 };
