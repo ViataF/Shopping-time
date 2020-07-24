@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { v4 as uuid } from "uuid";
+import axios from "axios";
 import UserInfoContext from "./userInfoContext";
 import userInfoReducer from "./userInfoReducer";
 import {
@@ -10,36 +10,38 @@ import {
   UPDATE_INFO,
   FILTER_INFO,
   CLEAR_FILTER,
+  USER_ERROR,
 } from "../types";
 
 const UserInfoState = (props) => {
   const initialState = {
-    userInfo: [
-      {
-        id: 1,
-        name: "jack and jill",
-        email: "jill@gmail.com",
-        phone: "1234-123-123",
-      },
-      {
-        id: 2,
-        name: "jack and jill",
-        email: "jack@gmail.com",
-        phone: "1234-123-123",
-      },
-    ],
+    userInfo: [],
     current: null,
     filtered: null,
+    error: null,
   };
   const [state, dispatch] = useReducer(userInfoReducer, initialState);
 
   //  Add info
-  const addUserInfo = (userInfo) => {
-    userInfo.id = uuid();
-    dispatch({
-      type: ADD_INFO,
-      payload: userInfo,
-    });
+  const addUserInfo = async (userInfo) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.post("/api/places", userInfo, config);
+      dispatch({
+        type: ADD_INFO,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: USER_ERROR,
+        payload: err.response.msg,
+      });
+    }
   };
 
   //  Delete info
@@ -71,8 +73,8 @@ const UserInfoState = (props) => {
     });
   };
   // Filter info
-  const filterInfo = (text) => {
-    dispatch({ type: FILTER_INFO, payload: text });
+  const filterInfo = (text, radio) => {
+    dispatch({ type: FILTER_INFO, payload: text && radio });
   };
   // Clear Filter
   const clearFilter = () => {
@@ -87,6 +89,7 @@ const UserInfoState = (props) => {
         userInfo: state.userInfo,
         current: state.current,
         filtered: state.filtered,
+        error: state.error,
         addUserInfo,
         deleteUser,
         setCurrent,

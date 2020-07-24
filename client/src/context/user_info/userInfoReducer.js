@@ -6,6 +6,7 @@ import {
   UPDATE_INFO,
   FILTER_INFO,
   CLEAR_FILTER,
+  USER_ERROR,
 } from "../types";
 
 export default (state, action) => {
@@ -42,13 +43,22 @@ export default (state, action) => {
         ...state,
         filtered: state.userInfo.filter((user) => {
           const regex = new RegExp(`${action.payload}`, "gi");
-          return user.name.match(regex) || user.email.match(regex);
+          return (
+            user.name.match(regex) ||
+            user.email.match(regex) ||
+            user.category.match(regex)
+          );
         }),
       };
     case CLEAR_FILTER:
       return {
         ...state,
         filtered: null,
+      };
+    case USER_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;

@@ -5,7 +5,7 @@ import UserInfoContext from "../../context/user_info/userInfoContext";
 const UserInfoItem = ({ user }) => {
   const userInfoContext = useContext(UserInfoContext);
   const { deleteUser, setCurrent, clearCurrent } = userInfoContext;
-  const { id, name, email, phone } = user;
+  const { id, name, email, phone, category } = user;
 
   const onDelete = () => {
     deleteUser(id);
@@ -29,6 +29,11 @@ const UserInfoItem = ({ user }) => {
         {phone && (
           <li>
             <i className="fas fa-envelope-open"></i> {phone}
+          </li>
+        )}
+        {category && (
+          <li>
+            <i className="fas fa-envelope-open"></i> {category}
           </li>
         )}
       </ul>
