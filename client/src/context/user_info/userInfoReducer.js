@@ -22,21 +22,21 @@ export default (state, action) => {
     case ADD_INFO:
       return {
         ...state,
-        userInfo: [...state.userInfo, action.payload],
+        userInfo: [action.payload, ...state.userInfo],
         loading: false,
       };
     case UPDATE_INFO:
       return {
         ...state,
         userInfo: state.userInfo.map((user) =>
-          user.id === action.payload.id ? action.payload : user
+          user._id === action.payload._id ? action.payload : user
         ),
         loading: false,
       };
     case DELETE_INFO:
       return {
         ...state,
-        userInfo: state.userInfo.filter((user) => user.id !== action.payload),
+        userInfo: state.userInfo.filter((user) => user._id !== action.payload),
         loading: false,
       };
     case CLEAR_USER_INFO:

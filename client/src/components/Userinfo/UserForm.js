@@ -15,6 +15,9 @@ const UserForm = () => {
         name: "",
         email: "",
         phone: "",
+        businessName: "",
+        description: "",
+        category: "none",
       });
     }
   }, [userInfoContext, current]);
@@ -23,9 +26,12 @@ const UserForm = () => {
     name: "",
     email: "",
     phone: "",
+    businessName: "",
+    description: "",
+    category: "none",
   });
 
-  const { name, email, phone } = userInfo;
+  const { name, email, phone, businessName, description, category } = userInfo;
 
   const onChange = (e) =>
     setUserInfo({
@@ -72,18 +78,33 @@ const UserForm = () => {
         value={phone}
         onChange={onChange}
       />
+      <input
+        type="text"
+        placeholder="BusinessName"
+        name="businessName"
+        value={businessName}
+        onChange={onChange}
+      />
+      <input
+        type="text"
+        placeholder="Description"
+        name="description"
+        value={description}
+        onChange={onChange}
+      />
       <h5>Categories</h5>
       <input
         type="radio"
-        name="Categories"
-        value="clothing"
+        name="category"
+        value={category}
+        onChange={onChange}
         // checked={type === "clothing"}
       />
       categorie{" "}
       <input
         type="radio"
-        name="Categories"
-        value="retaurant"
+        name="category"
+        value={category}
         // checked={type === "shopping"}
       />
       categorie{" "}
@@ -94,13 +115,13 @@ const UserForm = () => {
           className="btn"
         />
       </div>
-      <select id="categorie">
+      {/* <select id="categorie">
         {" "}
         <option value="1">Shopping</option>
         <option value="2">2</option>
         <option value="3">three</option>
         <option value="4">four</option>
-      </select>
+      </select> */}
       {current && (
         <div>
           <button className="btn" onClick={clearAll}>

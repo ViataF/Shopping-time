@@ -5,10 +5,10 @@ import UserInfoContext from "../../context/user_info/userInfoContext";
 const UserInfoItem = ({ user }) => {
   const userInfoContext = useContext(UserInfoContext);
   const { deleteUser, setCurrent, clearCurrent } = userInfoContext;
-  const { id, name, email, phone, category } = user;
+  const { _id, name, email, phone, category } = user;
 
   const onDelete = () => {
-    deleteUser(id);
+    deleteUser(_id);
     clearCurrent();
   };
   return (

@@ -63,11 +63,19 @@ const UserInfoState = (props) => {
   };
 
   //  Delete info
-  const deleteUser = (id) => {
-    dispatch({
-      type: DELETE_INFO,
-      payload: id,
-    });
+  const deleteUser = async (id) => {
+    try {
+      await axios.delete(`/api/places/${id}`);
+      dispatch({
+        type: DELETE_INFO,
+        payload: id,
+      });
+    } catch (err) {
+      dispatch({
+        type: USER_ERROR,
+        payload: err.response.msg,
+      });
+    }
   };
 
   // Clear UserInfo
@@ -98,8 +106,8 @@ const UserInfoState = (props) => {
     });
   };
   // Filter info
-  const filterInfo = (text, radio) => {
-    dispatch({ type: FILTER_INFO, payload: text && radio });
+  const filterInfo = (text) => {
+    dispatch({ type: FILTER_INFO, payload: text });
   };
   // Clear Filter
   const clearFilter = () => {
