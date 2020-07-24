@@ -1,4 +1,5 @@
 import {
+  GET_USER_INFO,
   ADD_INFO,
   DELETE_INFO,
   SET_CURRENT,
@@ -7,14 +8,22 @@ import {
   FILTER_INFO,
   CLEAR_FILTER,
   USER_ERROR,
+  CLEAR_USER_INFO,
 } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
+    case GET_USER_INFO:
+      return {
+        ...state,
+        userInfo: action.payload,
+        loading: false,
+      };
     case ADD_INFO:
       return {
         ...state,
         userInfo: [...state.userInfo, action.payload],
+        loading: false,
       };
     case UPDATE_INFO:
       return {
@@ -22,11 +31,21 @@ export default (state, action) => {
         userInfo: state.userInfo.map((user) =>
           user.id === action.payload.id ? action.payload : user
         ),
+        loading: false,
       };
     case DELETE_INFO:
       return {
         ...state,
         userInfo: state.userInfo.filter((user) => user.id !== action.payload),
+        loading: false,
+      };
+    case CLEAR_USER_INFO:
+      return {
+        ...state,
+        userInfo: null,
+        filtered: null,
+        error: null,
+        current: null,
       };
     case SET_CURRENT:
       return {

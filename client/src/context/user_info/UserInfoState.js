@@ -4,23 +4,41 @@ import UserInfoContext from "./userInfoContext";
 import userInfoReducer from "./userInfoReducer";
 import {
   ADD_INFO,
+  GET_USER_INFO,
   DELETE_INFO,
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_INFO,
   FILTER_INFO,
+  CLEAR_USER_INFO,
   CLEAR_FILTER,
   USER_ERROR,
 } from "../types";
 
 const UserInfoState = (props) => {
   const initialState = {
-    userInfo: [],
+    userInfo: null,
     current: null,
     filtered: null,
     error: null,
   };
   const [state, dispatch] = useReducer(userInfoReducer, initialState);
+
+  //  Get user info
+  const getUserInfo = async () => {
+    try {
+      const res = await axios.get("/api/places");
+      dispatch({
+        type: GET_USER_INFO,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: USER_ERROR,
+        payload: err.response.msg,
+      });
+    }
+  };
 
   //  Add info
   const addUserInfo = async (userInfo) => {
@@ -49,6 +67,13 @@ const UserInfoState = (props) => {
     dispatch({
       type: DELETE_INFO,
       payload: id,
+    });
+  };
+
+  // Clear UserInfo
+  const clearUserInfo = () => {
+    dispatch({
+      type: CLEAR_USER_INFO,
     });
   };
 
@@ -97,6 +122,8 @@ const UserInfoState = (props) => {
         updateInfo,
         clearFilter,
         filterInfo,
+        getUserInfo,
+        clearUserInfo,
       }}
     >
       {props.children}

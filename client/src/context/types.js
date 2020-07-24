@@ -1,10 +1,13 @@
+export const GET_USER_INFO = "GET_USER_INFO";
 export const ADD_INFO = "ADD_INFO";
 export const DELETE_INFO = "DELETE_INFO";
 export const SET_CURRENT = "SET_CURRENT";
 export const CLEAR_CURRENT = "CLEAR_CURRENT";
 export const UPDATE_INFO = "UPDATE_INFO";
 export const FILTER_INFO = "FILTER_INFO";
+export const CLEAR_USER_INFO = "CLEAR_USER_INFO";
 export const CLEAR_FILTER = "CLEAR_FILTER";
+export const USER_ERROR = "USER_ERROR";
 export const SET_ALERT = "SET_ALERT";
 export const REMOVE_ALERT = "REMOVE_ALERT";
 

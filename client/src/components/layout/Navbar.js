@@ -2,15 +2,19 @@ import React, { useContext, Fragment } from "react";
 import PropTypes from "prop-types";
 // import { Link } from "react-scroll";
 import AuthContext from "../../context/auth/authContext";
+import UserInfoContext from "../../context/user_info/userInfoContext";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const authContext = useContext(AuthContext);
+  const userInfoContext = useContext(UserInfoContext);
 
   const { isAuthenticated, logout, user } = authContext;
+  const { clearUserInfo } = userInfoContext;
 
   const onLogout = () => {
     logout();
+    clearUserInfo();
   };
 
   const authLinks = (
