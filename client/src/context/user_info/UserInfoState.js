@@ -61,7 +61,27 @@ const UserInfoState = (props) => {
       });
     }
   };
+  // Update info
+  const updateInfo = async (user) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
+    try {
+      const res = await axios.put(`/api/places/${user._id}`, user, config);
+      dispatch({
+        type: UPDATE_INFO,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: USER_ERROR,
+        payload: err.response.msg,
+      });
+    }
+  };
   //  Delete info
   const deleteUser = async (id) => {
     try {
@@ -98,13 +118,7 @@ const UserInfoState = (props) => {
       type: CLEAR_CURRENT,
     });
   };
-  // Update info
-  const updateInfo = (user) => {
-    dispatch({
-      type: UPDATE_INFO,
-      payload: user,
-    });
-  };
+
   // Filter info
   const filterInfo = (text) => {
     dispatch({ type: FILTER_INFO, payload: text });
