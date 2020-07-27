@@ -17,7 +17,7 @@ const UserForm = () => {
         phone: "",
         businessName: "",
         description: "",
-        category: "none",
+        category: null,
       });
     }
   }, [userInfoContext, current]);
@@ -28,7 +28,7 @@ const UserForm = () => {
     phone: "",
     businessName: "",
     description: "",
-    category: "none",
+    category: null,
   });
 
   const { name, email, phone, businessName, description, category } = userInfo;
@@ -93,7 +93,7 @@ const UserForm = () => {
         onChange={onChange}
       />
       <h5>Categories</h5>
-      <input
+      {/* <input
         type="radio"
         name="category"
         value={category}
@@ -106,8 +106,15 @@ const UserForm = () => {
         name="category"
         value={category}
         // checked={type === "shopping"}
-      />
-      categorie{" "}
+      /> */}
+      {/* categorie{" "} */}
+      <select id="category" name="category" value={category}onChange={onChange}>
+        {" "}
+        <option value={category}>Category</option>
+        <option value={category}>2</option>
+        <option value={category}>3</option>
+        <option value={category}>4</option>
+      </select>
       <div>
         <input
           type="submit"
@@ -115,13 +122,6 @@ const UserForm = () => {
           className="btn"
         />
       </div>
-      {/* <select id="categorie">
-        {" "}
-        <option value="1">Shopping</option>
-        <option value="2">2</option>
-        <option value="3">three</option>
-        <option value="4">four</option>
-      </select> */}
       {current && (
         <div>
           <button className="btn" onClick={clearAll}>

@@ -13,6 +13,7 @@ import {
   CLEAR_USER_INFO,
   CLEAR_FILTER,
   USER_ERROR,
+  FILTER_CATEGORY
 } from "../types";
 
 const UserInfoState = (props) => {
@@ -123,6 +124,13 @@ const UserInfoState = (props) => {
   const filterInfo = (text) => {
     dispatch({ type: FILTER_INFO, payload: text });
   };
+  // Filter categorie
+  const filterCategory = option => {
+    dispatch({
+      type: FILTER_CATEGORY, payload: option
+    })
+  }
+
   // Clear Filter
   const clearFilter = () => {
     dispatch({
@@ -146,6 +154,7 @@ const UserInfoState = (props) => {
         filterInfo,
         getUserInfo,
         clearUserInfo,
+        filterCategory
       }}
     >
       {props.children}

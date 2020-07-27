@@ -5,6 +5,8 @@ export const SET_CURRENT = "SET_CURRENT";
 export const CLEAR_CURRENT = "CLEAR_CURRENT";
 export const UPDATE_INFO = "UPDATE_INFO";
 export const FILTER_INFO = "FILTER_INFO";
+export const FILTER_CATEGORY = "FILTER_CATEGORY";
+
 export const CLEAR_USER_INFO = "CLEAR_USER_INFO";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 export const USER_ERROR = "USER_ERROR";
