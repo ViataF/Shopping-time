@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
 
+import "./Register.css";
 const Register = (props) => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
@@ -49,12 +50,14 @@ const Register = (props) => {
 
   return (
     <div className="form">
-      <h1>
+      <h1 className="register">
         Account <span className="text-primary">Register</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name</label>
+          <label className="register" htmlFor="name">
+            Name
+          </label>
           <input
             type="text"
             name="name"
@@ -64,7 +67,9 @@ const Register = (props) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email Address</label>
+          <label className="register" htmlFor="email">
+            Email Address
+          </label>
           <input
             type="email"
             name="email"
@@ -74,7 +79,9 @@ const Register = (props) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label className="register" htmlFor="password">
+            Password
+          </label>
           <input
             type="password"
             name="password"
@@ -85,7 +92,9 @@ const Register = (props) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password2">Confirm Password</label>
+          <label className="register" htmlFor="password2">
+            Confirm Password
+          </label>
           <input
             type="password"
             name="password2"

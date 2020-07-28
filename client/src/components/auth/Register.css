@@ -1,0 +1,22 @@
+.form {
+  background-color: cornflowerblue;
+  margin: 50px 140px;
+  border-radius: 20px;
+  height: 75vh;
+}
+
+label.register {
+  font-weight: bolder;
+}
+
+h1.register {
+  padding: 20px;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: space-evenly;
+  text-align: left;
+}
