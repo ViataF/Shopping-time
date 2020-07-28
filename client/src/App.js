@@ -13,9 +13,11 @@ import UserInfoState from "./context/user_info/UserInfoState";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuhToken";
+import User from "./components/pages/Users";
 import "./App.css";
 import "antd/dist/antd.css";
-import UserForm from "./components/Userinfo/UserForm";
+import Shops from "./components/pages/Shops";
+import Footer from "./components/layout/Footer";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -31,16 +33,16 @@ const App = () => {
               <div className="container">
                 <Alerts />
                 <Switch>
-                  <PrivateRoute exact path="/" component={Home} />
+                  <Route exact path="/" component={Home} />
                   <Route exact path="/about" component={About} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/contact" component={Contact} />
-                  <Route exact path="/userform" component={UserForm} />
+                  <Route exact path="/shops" component={Shops} />
+                  <PrivateRoute exact path="/users" component={User} />
                 </Switch>
-                <About />
-                <Contact />
               </div>
+              <Footer />
             </Fragment>
           </Router>
         </AlertState>

@@ -1,13 +1,19 @@
 .home-section {
-  height: 91vh;
-  width: 99vw;
+  height: 100%;
 }
+
 .about-section {
   height: 100vh;
   width: 99vw;
   background-color: tomato;
 }
-.contact-section {
+
+.Contact {
+  background-image: url("./components/layout/images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   width: 99vw;
   background-color: green;
