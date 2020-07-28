@@ -13,7 +13,8 @@ import {
   CLEAR_USER_INFO,
   CLEAR_FILTER,
   USER_ERROR,
-  FILTER_CATEGORY
+  FILTER_CATEGORY,
+  GET_ALL_BUSINESSES,
 } from "../types";
 
 const UserInfoState = (props) => {
@@ -22,6 +23,7 @@ const UserInfoState = (props) => {
     current: null,
     filtered: null,
     error: null,
+    users: [],
   };
   const [state, dispatch] = useReducer(userInfoReducer, initialState);
 
@@ -31,6 +33,21 @@ const UserInfoState = (props) => {
       const res = await axios.get("/api/places");
       dispatch({
         type: GET_USER_INFO,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: USER_ERROR,
+        payload: err.response.msg,
+      });
+    }
+  };
+  //  Get info
+  const getAllBusinesses = async () => {
+    try {
+      const res = await axios.get("/api/places/all");
+      dispatch({
+        type: GET_ALL_BUSINESSES,
         payload: res.data,
       });
     } catch (err) {
@@ -124,12 +141,13 @@ const UserInfoState = (props) => {
   const filterInfo = (text) => {
     dispatch({ type: FILTER_INFO, payload: text });
   };
-  // Filter categorie
-  const filterCategory = option => {
+  // Filter categories
+  const filterCategory = (option) => {
     dispatch({
-      type: FILTER_CATEGORY, payload: option
-    })
-  }
+      type: FILTER_CATEGORY,
+      payload: option,
+    });
+  };
 
   // Clear Filter
   const clearFilter = () => {
@@ -145,6 +163,7 @@ const UserInfoState = (props) => {
         current: state.current,
         filtered: state.filtered,
         error: state.error,
+        users: state.users,
         addUserInfo,
         deleteUser,
         setCurrent,
@@ -153,8 +172,9 @@ const UserInfoState = (props) => {
         clearFilter,
         filterInfo,
         getUserInfo,
+        getAllBusinesses,
         clearUserInfo,
-        filterCategory
+        filterCategory,
       }}
     >
       {props.children}

@@ -3,28 +3,26 @@ import UserInfoContext from "../../context/user_info/userInfoContext";
 const CategorieFilter = () => {
   const userInfoContext = useContext(UserInfoContext);
   const text = useRef("");
-  const option = useRef(null)
+  const option = useRef(null);
 
-  const { filterInfo,filterCategory, clearFilter, filtered } = userInfoContext;
+  const { filterInfo, filterCategory, clearFilter, filtered } = userInfoContext;
 
   useEffect(() => {
     if (filtered === null) {
       text.current.value = "";
-
     }
     if (filtered === null) {
-      option.current.value = "1"
+      option.current.value = "";
     }
   });
 
   const onChange = (e) => {
     if (text.current.value !== "") {
       filterInfo(e.target.value);
-    } 
-    else if(option.current.value !== null){
-      filterCategory(e.target.value)
-    }else {
-      clearFilter()
+    } else if (option.current.value !== null) {
+      filterCategory(e.target.value);
+    } else {
+      clearFilter();
     }
   };
 
@@ -38,8 +36,10 @@ const CategorieFilter = () => {
       />
       <select id="category" ref={option} onChange={onChange}>
         {" "}
-        <option >2</option>
-
+        <option value="">none</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
       </select>
     </form>
   );

@@ -9,7 +9,8 @@ import {
   CLEAR_FILTER,
   USER_ERROR,
   CLEAR_USER_INFO,
-  FILTER_CATEGORY
+  FILTER_CATEGORY,
+  GET_ALL_BUSINESSES,
 } from "../types";
 
 export default (state, action) => {
@@ -18,6 +19,12 @@ export default (state, action) => {
       return {
         ...state,
         userInfo: action.payload,
+        loading: false,
+      };
+    case GET_ALL_BUSINESSES:
+      return {
+        ...state,
+        users: action.payload,
         loading: false,
       };
     case ADD_INFO:
@@ -70,16 +77,14 @@ export default (state, action) => {
           );
         }),
       };
-      case FILTER_CATEGORY:
-        return{...state,
-          filtered: state.userInfo.filter(
-            (info)=>{
-              const regex = new RegExp(action.payload)
-              return info.category.match(regex)
-            }
-          )
-        }
-
+    case FILTER_CATEGORY:
+      return {
+        ...state,
+        filtered: state.userInfo.filter((info) => {
+          const regex = new RegExp(action.payload);
+          return info.category.match(regex);
+        }),
+      };
 
     case CLEAR_FILTER:
       return {

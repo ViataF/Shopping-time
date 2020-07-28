@@ -19,6 +19,16 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+router.get("/all", async (req, res) => {
+  try {
+    const places = await Places.find({ __id: req.id });
+    res.json(places);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 // // @route   Post api/info
 // @desc    Add info
 // @access  Public
