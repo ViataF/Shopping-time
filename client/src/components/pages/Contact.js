@@ -1,11 +1,71 @@
 import React from "react";
 
-const Contact = () => {
-  return (
-    <div className="contact-section" id="contact">
-      <h1> About this app</h1>
-    </div>
-  );
-};
+export default class ContactUs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      status: "",
+    };
+  }
 
-export default Contact;
+  render() {
+    const { status } = this.state;
+    return (
+      <div className="Contact">
+        <h2>Talk to us</h2>
+        <form
+          onSubmit={this.submitForm}
+          action="https://formspree.io/mzbjyweq"
+          method="POST"
+        >
+          <label>Name:</label>
+          <input type="text" name="name" />
+          <label>Email:</label>
+          <input type="email" name="email" />
+          <label>Message:</label>
+          <input type="text" name="message" />
+          {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
+          {status === "ERROR" && <p>Ooops! There was an error.</p>}
+        </form>
+        <h3>Contact details</h3>
+        <span>
+          <a href="http://github.com/ViataF" target="__blank">
+            Github
+          </a>
+          <a href="http://facebook.com/viata.fredericks" target="__blank">
+            Facebook
+          </a>
+          <a
+            href="http://linkedin.com/in/viata-fredericks-2580151ab"
+            target="__blank"
+          >
+            Linkedin
+          </a>
+          <a href="mailto:viataruth@gmail.com" target="__blank">
+            Email
+          </a>
+        </span>
+      </div>
+    );
+  }
+
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
+}
