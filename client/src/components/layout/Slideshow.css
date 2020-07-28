@@ -1,0 +1,30 @@
+.each-slide1,
+.each-slide2,
+.each-slide3 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+}
+
+.each-slide1 {
+  background-image: url("./images/frankie-cordoba-UfRLtAHHaP8-unsplash.jpg");
+}
+.each-slide2 {
+  background-image: url("./images/welovebarcelona-de-gOe4rbB8K6U-unsplash.jpg");
+}
+.each-slide3 {
+  background-image: url("./images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg");
+}
+
+.each-slide1 section,
+.each-slide2 section,
+.each-slide3 section {
+  background-color: rgba(255, 255, 255, 0.58);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  text-align: center;
+  position: relative;
+  font-weight: bolder;
+}
