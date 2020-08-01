@@ -4,19 +4,12 @@
 
 .about-section {
   height: 100vh;
-  width: 99vw;
+  width: 100vw;
   background-color: tomato;
 }
 
-.Contact {
-  background-image: url("./components/layout/images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  width: 99vw;
-  background-color: green;
+ul {
+  list-style-type: none;
 }
 
 /* Animation */
@@ -33,4 +26,31 @@
 .item-exit-active {
   opacity: 0;
   transition: opacity 1000ms ease-in;
+}
+/* Navbar */
+
+nav a.brand-logo img {
+  width: 50px;
+}
+nav a.brand-logo {
+  color: #bf5e3b;
+  display: flex;
+  font-family: cursive;
+  padding-left: 20px;
+}
+nav ul.hide-on-med-and-down {
+  display: flex;
+  justify-content: center;
+}
+nav ul li a {
+  color: black;
+}
+/* nav {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+} */
+
+.nav-wrapper {
+  background-color: #ffffff;
 }
