@@ -1,13 +1,9 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment } from "react";
 import Slideshow from "../layout/Slideshow";
-
-import UserForm from "../Userinfo/UserForm";
-import CategorieFilter from "../Userinfo/CategorieFilter";
-
 import "./Home.css";
 import OpenNow from "../layout/OpenNow";
 import Purpose from "../layout/Purpose";
-import Categories from "../layout/Categories";
+// import Categories from "../layout/Categories";
 const Home = () => {
   return (
     <div className="home-section" id="home">
@@ -15,7 +11,6 @@ const Home = () => {
         <Slideshow />
         <Purpose />
         <OpenNow />
-        <Categories />
       </Fragment>
     </div>
   );

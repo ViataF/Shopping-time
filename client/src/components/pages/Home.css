@@ -1,52 +1,395 @@
-.container.categories {
-  /* background-color: black;
-  color: white; */
-  height: 40vh;
-}
-
-table {
+/* Open now */
+.button {
   display: flex;
-  justify-content: space-evenly;
-}
-tr {
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-h2.openNow {
-  /* color: white; */
-  text-align: center;
-}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  /* purpose component */
+  .container.purpose {
+    height: 100%;
+    margin-bottom: 50px;
+  }
 
-h2.categories,
+  p.purpose {
+    padding: 20px 20px;
+    font-size: large;
+    text-align: center;
+  }
+}
 h2.purpose {
-  margin: 0px 80px;
-  padding: 40px 0 30px;
+  margin: 0px 32px;
+  padding: 30px 0 40px;
   text-align: center;
   font-size: x-large;
   border-bottom: black solid;
 }
 
+/* Open now */
+
+h3.openNow {
+  text-align: center;
+  font-weight: bolder;
+  font-size: xx-large;
+  font-family: cursive;
+}
+
 .container-openNow {
-  background-color: blue;
+  background-color: #3dd1f2;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100%;
+  padding: 1px 10px 15px;
 }
 
-.openNow {
-  background-color: rgb(255, 255, 255, 0.6);
+.owl-item {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  width: 290px;
+}
+
+.item .card {
+  height: 300px;
   text-align: center;
 }
 
-.container.purpose {
-  height: 35vh;
+.item .card .card-image img {
+  height: 120px;
 }
 
-p.purpose {
-  padding: 40px 40px;
+.item .card ul li {
+  display: flex;
+  justify-content: center;
+}
+
+h3.text-primary {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  padding: 5px 0;
+  font-family: cursive;
   font-size: large;
-  text-align: center;
+  margin: 0;
+}
+
+ul.list {
+  list-style-type: none;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  /* Purpose */
+  h2.purpose {
+    margin: 0px 80px;
+    padding: 40px 0 30px;
+    text-align: center;
+    font-size: x-large;
+    border-bottom: black solid;
+  }
+
+  .container.purpose {
+    height: 100%;
+    margin-bottom: 50px;
+  }
+
+  p.purpose {
+    padding: 20px 40px;
+    font-size: large;
+    text-align: center;
+  }
+  /* Open now */
+
+  h3.openNow {
+    /* color: white; */
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .container-openNow {
+    background-color: #3dd1f2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 10px 10px 13px;
+  }
+
+  .owl-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .item {
+    width: 250px;
+  }
+
+  .item .card {
+    height: 350px;
+    text-align: center;
+  }
+
+  .item .card .card-image img {
+    height: 100px;
+  }
+
+  .item .card ul li {
+    font-size: larger;
+    /* padding: 5px; */
+  }
+
+  h3.text-primary {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding: 10px 0;
+    font-family: cursive;
+    margin: 0;
+  }
+
+  ul.list {
+    list-style-type: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* Purpose component */
+  h2.purpose {
+    margin: 0px 80px;
+    padding: 40px 0 30px;
+    text-align: center;
+    font-size: x-large;
+    border-bottom: black solid;
+  }
+  .container.purpose {
+    height: 100%;
+    margin-bottom: 50px;
+  }
+
+  p.purpose {
+    padding: 20px 40px;
+    font-size: large;
+    text-align: center;
+  }
+
+  /* Open now */
+
+  h3.openNow {
+    /* color: white; */
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+
+  .container-openNow {
+    background-color: #3dd1f2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 10px 10px 13px;
+  }
+
+  .owl-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .item {
+    width: 30vw;
+  }
+
+  .item .card {
+    height: 330px;
+    text-align: center;
+  }
+
+  .item .card .card-image img {
+    height: 100px;
+  }
+
+  .item .card ul li {
+    font-size: larger;
+  }
+
+  h3.text-primary {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    /* padding: 15px 0; */
+    font-family: cursive;
+    margin: 0;
+  }
+
+  ul.list {
+    list-style-type: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container.categories {
+    /* background-color: black;
+  color: white; */
+    height: 40vh;
+  }
+
+  h2.categories,
+  h2.purpose {
+    margin: 0px 80px;
+    padding: 40px 0 30px;
+    text-align: center;
+    font-size: x-large;
+    border-bottom: black solid;
+  }
+
+  /* Open now */
+
+  h3.openNow {
+    /* color: white; */
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .container-openNow {
+    background-color: #3dd1f2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 1px 10px 15px;
+  }
+
+  .owl-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .item {
+    width: 30vw;
+  }
+
+  .item .card {
+    height: 380px;
+    text-align: center;
+  }
+
+  .item .card .card-image img {
+    height: 140px;
+  }
+
+  .item .card ul li {
+    font-size: larger;
+    /* padding: 5px; */
+  }
+
+  h3.text-primary {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    font-family: cursive;
+    margin: 0;
+  }
+
+  ul.list {
+    list-style-type: none;
+  }
+
+  .container.purpose {
+    height: 100%;
+    margin-bottom: 50px;
+  }
+
+  p.purpose {
+    padding: 20px 40px;
+    font-size: large;
+    text-align: center;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container.categories {
+    /* background-color: black;
+  color: white; */
+    height: 40vh;
+  }
+
+  h2.categories,
+  h2.purpose {
+    margin: 0px 80px;
+    padding: 40px 0 30px;
+    text-align: center;
+    font-size: x-large;
+    border-bottom: black solid;
+  }
+
+  /* Open now */
+
+  h3.openNow {
+    /* color: white; */
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .container-openNow {
+    background-color: #3dd1f2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 10px 10px 15px;
+  }
+
+  .owl-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .item {
+    width: 27vw;
+  }
+
+  .item .card {
+    height: 420px;
+    text-align: center;
+  }
+
+  .item .card .card-image img {
+    height: 180px;
+  }
+
+  .item .card ul li {
+    font-size: larger;
+    /* padding: 5px; */
+  }
+
+  h3.text-primary {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    /* padding: 15px 0; */
+    font-family: cursive;
+    margin: 0;
+  }
+
+  ul.list {
+    list-style-type: none;
+  }
+
+  .container.purpose {
+    height: 100%;
+    margin-bottom: 50px;
+  }
+
+  p.purpose {
+    padding: 20px 40px;
+    font-size: large;
+    text-align: center;
+  }
 }
