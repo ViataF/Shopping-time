@@ -47,6 +47,11 @@ router.post(
       businessName,
       category,
       description,
+      open,
+      closed,
+      address,
+      businessURL,
+      logo,
     } = req.body;
 
     try {
@@ -57,6 +62,11 @@ router.post(
         businessName,
         category,
         description,
+        open,
+        closed,
+        address,
+        businessURL,
+        logo,
         user: req.user.id,
       });
 
@@ -74,7 +84,19 @@ router.post(
 // @desc    Update info
 // @access  Public
 router.put("/:id", auth, async (req, res) => {
-  const { name, email, phone, businessName, category, description } = req.body;
+  const {
+    name,
+    email,
+    phone,
+    businessName,
+    category,
+    description,
+    open,
+    closed,
+    address,
+    businessURL,
+    logo,
+  } = req.body;
 
   //Build places object
   const placesFields = {};
@@ -83,7 +105,12 @@ router.put("/:id", auth, async (req, res) => {
   if (phone) placesFields.phone = phone;
   if (businessName) placesFields.businessName = businessName;
   if (category) placesFields.category = category;
+  if (address) placesFields.address = address;
   if (description) placesFields.description = description;
+  if (open) placesFields.open = open;
+  if (closed) placesFields.closed = closed;
+  if (businessURL) placesFields.businessURL = businessURL;
+  if (logo) placesFields.logo = logo;
 
   try {
     let info = await Places.findById(req.params.id);

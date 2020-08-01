@@ -20,15 +20,30 @@ const PlacesSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  openTimes: {
-    type: Date,
-    default: Date.now,
+  open: {
+    type: String,
+    required: true,
+  },
+  closed: {
+    type: String,
+    required: true,
   },
   category: {
     type: String,
     required: true,
   },
   description: {
+    type: String,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  businessURL: {
+    type: String,
+  },
+  logo: {
     type: String,
     required: true,
   },
