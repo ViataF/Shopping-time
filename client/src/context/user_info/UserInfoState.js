@@ -23,7 +23,7 @@ const UserInfoState = (props) => {
     current: null,
     filtered: null,
     error: null,
-    users: [],
+    users: null,
   };
   const [state, dispatch] = useReducer(userInfoReducer, initialState);
 

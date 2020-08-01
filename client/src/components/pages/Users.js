@@ -1,6 +1,5 @@
-import React,{useEffect,useContext} from "react";
+import React, { useEffect, useContext } from "react";
 import UserForm from "../Userinfo/UserForm";
-import CategorieFilter from "../Userinfo/CategorieFilter";
 import UsersInfo from "../Userinfo/UserInfo";
 import AuthContext from "../../context/auth/authContext";
 const Users = () => {
@@ -13,10 +12,8 @@ const Users = () => {
 
   return (
     <div>
-      <CategorieFilter/>
-      <UsersInfo/>
+      <UsersInfo />
       <UserForm />
-      
     </div>
   );
 };

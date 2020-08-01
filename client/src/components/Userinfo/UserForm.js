@@ -18,6 +18,11 @@ const UserForm = () => {
         businessName: "",
         description: "",
         category: "",
+        open: "",
+        closed: "",
+        address: "",
+        businessURL: "",
+        logo: "",
       });
     }
   }, [userInfoContext, current]);
@@ -29,9 +34,26 @@ const UserForm = () => {
     businessName: "",
     description: "",
     category: "",
+    open: "",
+    closed: "",
+    address: "",
+    businessURL: "",
+    logo: "",
   });
 
-  const { name, email, phone, businessName, description, category } = userInfo;
+  const {
+    name,
+    email,
+    phone,
+    businessName,
+    description,
+    category,
+    open,
+    closed,
+    address,
+    businessURL,
+    logo,
+  } = userInfo;
 
   const onChange = (e) =>
     setUserInfo({
@@ -57,43 +79,55 @@ const UserForm = () => {
       <h2 className="white-text">
         {current ? "Edit Information" : "Add Information"}
       </h2>
+      <label>Name</label>
       <input
         type="text"
         placeholder="Name"
         name="name"
         value={name}
         onChange={onChange}
-      />
+      />{" "}
+      <label>Name</label>
       <input
         type="email"
         placeholder="Email"
         name="email"
         value={email}
         onChange={onChange}
-      />
+      />{" "}
+      <label>Name</label>
       <input
         type="text"
         placeholder="Phone"
         name="phone"
         value={phone}
         onChange={onChange}
-      />
+      />{" "}
+      <label>Name</label>
       <input
         type="text"
         placeholder="BusinessName"
         name="businessName"
         value={businessName}
         onChange={onChange}
-      />
+      />{" "}
+      <label>Name</label>
       <input
         type="text"
         placeholder="Description"
         name="description"
         value={description}
         onChange={onChange}
+      />{" "}
+      <label>Name</label>
+      <input
+        type="text"
+        placeholder="Address"
+        name="address"
+        value={address}
+        onChange={onChange}
       />
       <h5>Categories</h5>
-
       <select
         id="category"
         name="category"
@@ -102,10 +136,48 @@ const UserForm = () => {
       >
         {" "}
         <option value="catergory">Category</option>
-        <option value="1">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+        <option value="Shop">Shop</option>
+        <option value="Restaurant">Restaurant</option>
+        <option value="Accessories">Accessories</option>
       </select>
+      <div name="open" onChange={onChange}>
+        <label>Open time</label>
+        <input
+          type="time"
+          id="appt"
+          name="open"
+          value={open}
+          onChange={onChange}
+          required
+        />
+        <label htmlFor="">Close time</label>
+        <input
+          type="time"
+          id="appt"
+          name="closed"
+          required
+          value={closed}
+          onChange={onChange}
+        />
+        <label htmlFor="">Website URL (optional)</label>
+        <input
+          type="url"
+          id="URL"
+          name="businessURL"
+          required
+          value={businessURL}
+          onChange={onChange}
+        />
+        <label htmlFor="">Logo</label>
+        <input
+          type="url"
+          id="logo"
+          name="logo"
+          required
+          value={logo}
+          onChange={onChange}
+        />
+      </div>
       <div>
         <input
           type="submit"
@@ -113,8 +185,6 @@ const UserForm = () => {
           className="btn"
         />
       </div>
-      <input type="time" id="appt" name="appt" required></input>
-      <input type="time" id="appt" name="appt" required></input>
       {current && (
         <div>
           <button className="btn" onClick={clearAll}>

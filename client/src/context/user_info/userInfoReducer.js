@@ -68,19 +68,20 @@ export default (state, action) => {
     case FILTER_INFO:
       return {
         ...state,
-        filtered: state.userInfo.filter((user) => {
+        filtered: state.users.filter((user) => {
           const regex = new RegExp(`${action.payload}`, "gi");
           return (
             user.name.match(regex) ||
             user.email.match(regex) ||
-            user.category.match(regex)
+            user.category.match(regex) ||
+            user.description.match(regex)
           );
         }),
       };
     case FILTER_CATEGORY:
       return {
         ...state,
-        filtered: state.userInfo.filter((info) => {
+        filtered: state.users.filter((info) => {
           const regex = new RegExp(action.payload);
           return info.category.match(regex);
         }),
