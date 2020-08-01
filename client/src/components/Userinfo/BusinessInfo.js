@@ -7,7 +7,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ReactOwlCarousel from "react-owl-carousel";
 
-const UserInfo = () => {
+const BusinessInfo = () => {
   const userInfoContext = useContext(UserInfoContext);
 
   const { users, filtered, getAllBusinesses, loading } = userInfoContext;
@@ -17,14 +17,44 @@ const UserInfo = () => {
     // eslint-disable-next-line
   }, []);
 
-  if (users !== [null] && users.length === 0 && !loading) {
+  if (users !== null && users.length === 0 && !loading) {
     return <h4>Not available</h4>;
   }
 
+  const options = {
+    margin: 30,
+    responsiveClass: true,
+    nav: false,
+    dots: true,
+    loop: true,
+    autoplay: true,
+    // navText: ["Prev", "Next"],
+    smartSpeed: 1000,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      700: {
+        items: 3,
+      },
+      1000: {
+        items: 3,
+      },
+      1500: {
+        items: 5,
+      },
+    },
+  };
   return (
     <Fragment>
-      {users !== [] && !loading ? (
-        <ReactOwlCarousel className="owl-theme" nav loop autoplay={true}>
+      {users !== null && !loading ? (
+        <ReactOwlCarousel className="owl-theme" {...options}>
           {filtered !== null
             ? filtered.map((user) => (
                 <BusinessInfoItem user={user} key={user._id} />
@@ -40,4 +70,4 @@ const UserInfo = () => {
   );
 };
 
-export default UserInfo;
+export default BusinessInfo;
