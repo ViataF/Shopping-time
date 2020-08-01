@@ -3,7 +3,7 @@ import UserInfoContext from "../../context/user_info/userInfoContext";
 const CategorieFilter = () => {
   const userInfoContext = useContext(UserInfoContext);
   const text = useRef("");
-  const option = useRef(null);
+  const option = useRef("");
 
   const { filterInfo, filterCategory, clearFilter, filtered } = userInfoContext;
 
@@ -19,7 +19,7 @@ const CategorieFilter = () => {
   const onChange = (e) => {
     if (text.current.value !== "") {
       filterInfo(e.target.value);
-    } else if (option.current.value !== null) {
+    } else if (option.current.value !== "") {
       filterCategory(e.target.value);
     } else {
       clearFilter();
@@ -31,15 +31,14 @@ const CategorieFilter = () => {
       <input
         ref={text}
         type="text"
-        placeholder="Filter info..."
+        placeholder="Search..."
         onChange={onChange}
       />
       <select id="category" ref={option} onChange={onChange}>
-        {" "}
-        <option value="">none</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option value="">Select a category</option>
+        <option>Shop</option>
+        <option>Restaurants</option>
+        <option>Accessories</option>
       </select>
     </form>
   );
