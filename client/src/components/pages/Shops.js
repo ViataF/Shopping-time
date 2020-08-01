@@ -1,12 +1,13 @@
 import React from "react";
 import CategorieFilter from "../Userinfo/CategorieFilter";
-import BusinessInfo from "../Userinfo/BusinessInfo";
+import AllBusinessInfo from "../Userinfo/AllBusinessInfo";
+import "./Shops.css";
 
 const Shops = () => {
   return (
     <div>
       <CategorieFilter />
-      <BusinessInfo />
+      <AllBusinessInfo />
     </div>
   );
 };
