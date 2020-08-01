@@ -4,7 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
+  height: 51vh;
 }
 
 .each-slide1 {
@@ -20,11 +20,283 @@
 .each-slide1 section,
 .each-slide2 section,
 .each-slide3 section {
-  background-color: rgba(255, 255, 255, 0.58);
+  background-color: rgba(36, 35, 35, 0.3);
   background-position: center;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 51vh;
   text-align: center;
   position: relative;
   font-weight: bolder;
+  padding: 20px;
+  color: white;
+}
+
+.each-slide1 section p,
+.each-slide2 section p,
+.each-slide3 section p {
+  background-color: red;
+  font-size: larger;
+}
+
+.each-slide1 section h2,
+.each-slide2 section h2,
+.each-slide3 section h2 {
+  margin-top: 15%;
+  font-weight: bolder;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .each-slide1,
+  .each-slide2,
+  .each-slide3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 53vh;
+  }
+
+  .each-slide1 {
+    background-image: url("./images/frankie-cordoba-UfRLtAHHaP8-unsplash.jpg");
+  }
+  .each-slide2 {
+    background-image: url("./images/welovebarcelona-de-gOe4rbB8K6U-unsplash.jpg");
+  }
+  .each-slide3 {
+    background-image: url("./images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg");
+  }
+
+  .each-slide1 section,
+  .each-slide2 section,
+  .each-slide3 section {
+    background-color: rgba(36, 35, 35, 0.3);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 53vh;
+    text-align: center;
+    position: relative;
+    font-weight: bolder;
+    padding: 20px;
+    color: white;
+  }
+
+  .each-slide1 section p,
+  .each-slide2 section p,
+  .each-slide3 section p {
+    background-color: red;
+    font-size: larger;
+  }
+
+  .each-slide1 section h2,
+  .each-slide3 section h2 {
+    margin-top: 125px;
+    font-weight: bold;
+    font-size: xx-large;
+  }
+  .each-slide2 section h2 {
+    margin-top: 160px;
+    font-weight: bold;
+    font-size: xx-large;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .each-slide1,
+  .each-slide2,
+  .each-slide3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55vh;
+  }
+
+  .each-slide1 {
+    background-image: url("./images/frankie-cordoba-UfRLtAHHaP8-unsplash.jpg");
+  }
+  .each-slide2 {
+    background-image: url("./images/welovebarcelona-de-gOe4rbB8K6U-unsplash.jpg");
+  }
+  .each-slide3 {
+    background-image: url("./images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg");
+  }
+
+  .each-slide1 section,
+  .each-slide2 section,
+  .each-slide3 section {
+    background-color: rgba(36, 35, 35, 0.3);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 55vh;
+    text-align: center;
+    position: relative;
+    font-weight: bolder;
+    padding: 20px;
+    color: white;
+  }
+
+  .each-slide1 section p,
+  .each-slide2 section p,
+  .each-slide3 section p {
+    background-color: red;
+    font-size: larger;
+  }
+
+  .each-slide1 section h2,
+  .each-slide2 section h2,
+  .each-slide3 section h2 {
+    margin-top: 170px;
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .each-slide1,
+  .each-slide2,
+  .each-slide3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 53vh;
+  }
+
+  .each-slide1 {
+    background-image: url("./images/frankie-cordoba-UfRLtAHHaP8-unsplash.jpg");
+  }
+  .each-slide2 {
+    background-image: url("./images/welovebarcelona-de-gOe4rbB8K6U-unsplash.jpg");
+  }
+  .each-slide3 {
+    background-image: url("./images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg");
+  }
+
+  .each-slide1 section,
+  .each-slide2 section,
+  .each-slide3 section {
+    background-color: rgba(36, 35, 35, 0.3);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 53vh;
+    text-align: center;
+    position: relative;
+    font-weight: bolder;
+    padding: 20px;
+    color: white;
+  }
+
+  .each-slide1 section p,
+  .each-slide2 section p,
+  .each-slide3 section p {
+    background-color: red;
+    font-size: larger;
+  }
+
+  .each-slide1 section h2,
+  .each-slide2 section h2,
+  .each-slide3 section h2 {
+    margin-top: 150px;
+    font-weight: bolder;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .each-slide1,
+  .each-slide2,
+  .each-slide3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55vh;
+  }
+
+  .each-slide1 {
+    background-image: url("./images/frankie-cordoba-UfRLtAHHaP8-unsplash.jpg");
+  }
+  .each-slide2 {
+    background-image: url("./images/welovebarcelona-de-gOe4rbB8K6U-unsplash.jpg");
+  }
+  .each-slide3 {
+    background-image: url("./images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg");
+  }
+
+  .each-slide1 section,
+  .each-slide2 section,
+  .each-slide3 section {
+    background-color: rgba(36, 35, 35, 0.3);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 55vh;
+    text-align: center;
+    position: relative;
+    font-weight: bolder;
+    padding: 20px;
+    color: white;
+  }
+
+  .each-slide1 section p,
+  .each-slide2 section p,
+  .each-slide3 section p {
+    background-color: red;
+    font-size: larger;
+  }
+
+  .each-slide1 section h2,
+  .each-slide2 section h2,
+  .each-slide3 section h2 {
+    margin-top: 18%;
+    font-weight: bolder;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .each-slide1,
+  .each-slide2,
+  .each-slide3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 53vh;
+  }
+
+  .each-slide1 {
+    background-image: url("./images/frankie-cordoba-UfRLtAHHaP8-unsplash.jpg");
+  }
+  .each-slide2 {
+    background-image: url("./images/welovebarcelona-de-gOe4rbB8K6U-unsplash.jpg");
+  }
+  .each-slide3 {
+    background-image: url("./images/joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg");
+  }
+
+  .each-slide1 section,
+  .each-slide2 section,
+  .each-slide3 section {
+    background-color: rgba(36, 35, 35, 0.3);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 53vh;
+    text-align: center;
+    position: relative;
+    font-weight: bolder;
+    padding: 20px;
+    color: white;
+  }
+
+  .each-slide1 section p,
+  .each-slide2 section p,
+  .each-slide3 section p {
+    background-color: red;
+    font-size: larger;
+  }
+
+  .each-slide1 section h2,
+  .each-slide2 section h2,
+  .each-slide3 section h2 {
+    margin-top: 200px;
+    font-weight: bolder;
+  }
 }
