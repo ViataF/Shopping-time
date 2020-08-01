@@ -3,7 +3,7 @@ import React from "react";
 const Purpose = () => {
   return (
     <div className="container purpose">
-      <h2 className="purpose">Covid-19 Project</h2>
+      <h2 className="purpose">Seekers & Finders</h2>
       <p className="purpose">
         We have decided to create a platform to premote and connect businesses
         to customers. Covid-19 has had a major impact on the world and this is
