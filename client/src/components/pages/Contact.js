@@ -1,4 +1,5 @@
 import React from "react";
+import "./Contact.css";
 
 export default class ContactUs extends React.Component {
   constructor(props) {
@@ -12,40 +13,48 @@ export default class ContactUs extends React.Component {
   render() {
     const { status } = this.state;
     return (
-      <div className="Contact">
-        <h2>Talk to us</h2>
-        <form
-          onSubmit={this.submitForm}
-          action="https://formspree.io/mzbjyweq"
-          method="POST"
-        >
-          <label>Name:</label>
-          <input type="text" name="name" />
-          <label>Email:</label>
-          <input type="email" name="email" />
-          <label>Message:</label>
-          <input type="text" name="message" />
-          {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
-          {status === "ERROR" && <p>Ooops! There was an error.</p>}
-        </form>
-        <h3>Contact details</h3>
-        <span>
-          <a href="http://github.com/ViataF" target="__blank">
-            Github
-          </a>
-          <a href="http://facebook.com/viata.fredericks" target="__blank">
-            Facebook
-          </a>
-          <a
-            href="http://linkedin.com/in/viata-fredericks-2580151ab"
-            target="__blank"
+      <div className="contactForm">
+        <section className="contactus">
+          <h2 className="contact">Talk to us</h2>
+          <form
+            onSubmit={this.submitForm}
+            action="https://formspree.io/mzbjyweq"
+            method="POST"
           >
-            Linkedin
-          </a>
-          <a href="mailto:viataruth@gmail.com" target="__blank">
-            Email
-          </a>
-        </span>
+            <label>Name:</label>
+            <input type="text" name="name" required />
+            <label>Email:</label>
+            <input type="email" name="email" required />
+            <label>Message:</label>
+            <input type="text" name="message" required />
+            {status === "SUCCESS" ? (
+              <p>Thanks! Message has been sent.</p>
+            ) : (
+              <button>Submit</button>
+            )}
+            {status === "ERROR" && (
+              <p>Ooops! There was an error. Try again later.</p>
+            )}
+          </form>
+          <h3>Contact details</h3>
+          <span>
+            <a href="http://github.com/ViataF" target="__blank">
+              Github
+            </a>
+            <a href="http://facebook.com/viata.fredericks" target="__blank">
+              Facebook
+            </a>
+            <a
+              href="http://linkedin.com/in/viata-fredericks-2580151ab"
+              target="__blank"
+            >
+              Linkedin
+            </a>
+            <a href="mailto:viataruth@gmail.com" target="__blank">
+              Email
+            </a>
+          </span>
+        </section>
       </div>
     );
   }

@@ -1,0 +1,28 @@
+.contactForm {
+  background-image: url("../layout/images/berkeley-communications-WEDDt-u3q3o-unsplash.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+  background-color: green;
+}
+
+section.contactus {
+  background-color: rgba(36, 35, 35, 0.767);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  text-align: center;
+  position: relative;
+  font-weight: bolder;
+  padding: 20px;
+  color: white;
+}
+
+h2.contact {
+  margin: 0;
+  text-align: center;
+}
