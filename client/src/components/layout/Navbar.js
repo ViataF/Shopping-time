@@ -1,10 +1,8 @@
 import React, { useContext, Fragment } from "react";
-import PropTypes from "prop-types";
-// import { Link } from "react-scroll";
+
 import AuthContext from "../../context/auth/authContext";
 import UserInfoContext from "../../context/user_info/userInfoContext";
-import { Link } from "react-router-dom";
-
+import logo from "./images/logo.png";
 const Navigation = () => {
   const authContext = useContext(AuthContext);
   const userInfoContext = useContext(UserInfoContext);
@@ -22,27 +20,78 @@ const Navigation = () => {
       <li>Hello {user && user.name}</li>
       <li>
         <a onClick={onLogout} href="#!">
-          <i className="fas fa-sign-out-lt"></i>
           <span className="hide-sm">Logout</span>
         </a>
       </li>
     </Fragment>
   );
+
   const guestLinks = (
     <Fragment>
       <li>
-        <Link to="/register">Register</Link>
+        <a href="/register">Register</a>
       </li>
+      <li className="divider"></li>
       <li>
-        <Link to="/login">Login</Link>
+        <a href="/login">Login</a>
+      </li>
+    </Fragment>
+  );
+
+  const Personal = (
+    <Fragment>
+      <li>
+        <a href="/">Home </a>
+      </li>
+
+      <li>
+        <a href="/shops">Shops </a>
+      </li>
+
+      <li>
+        <a href="/about">About </a>
+      </li>
+
+      <li>
+        <a href="/contact">Contact </a>
+      </li>
+    </Fragment>
+  );
+  const business = (
+    <Fragment>
+      <li>
+        <a className="dropdown-trigger" href="#!" data-target="dropdown1">
+          Business<i className="material-icons right">arrow_drop_down</i>
+        </a>
       </li>
     </Fragment>
   );
 
   return (
     <div className="navbar">
-      <h1>Hello world</h1>
-      <ul>{isAuthenticated ? authLinks : guestLinks}</ul>
+      <nav>
+        <div className="nav-wrapper">
+          <a href="/" className="brand-logo">
+            <img src={logo} alt="logo" />
+            Seekers&Finders
+          </a>
+          <a href="/" data-target="mobile-demo" className="sidenav-trigger">
+            <i className="material-icons black-text">menu</i>
+          </a>
+          <ul className="hide-on-med-and-down">
+            {Personal}
+            {isAuthenticated ? authLinks : business}
+          </ul>
+        </div>
+        <ul id="dropdown1" className="dropdown-content">
+          {isAuthenticated ? null : guestLinks}
+        </ul>
+      </nav>
+
+      <ul className="sidenav" id="mobile-demo">
+        {Personal}
+        {isAuthenticated ? authLinks : business}
+      </ul>
     </div>
   );
 };
