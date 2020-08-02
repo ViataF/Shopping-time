@@ -30,28 +30,34 @@ export default class ContactUs extends React.Component {
             {status === "SUCCESS" ? (
               <p>Thanks! Message has been sent.</p>
             ) : (
-              <button>Submit</button>
+              <button className="btn">Submit</button>
             )}
             {status === "ERROR" && (
               <p>Ooops! There was an error. Try again later.</p>
             )}
           </form>
-          <h3>Contact details</h3>
+          <h3>Find us </h3>
           <span>
-            <a href="http://github.com/ViataF" target="__blank">
-              Github
-            </a>
-            <a href="http://facebook.com/viata.fredericks" target="__blank">
-              Facebook
+            <a
+              target="__blank"
+              href="https://github.com/ViataF"
+              className="waves-effect waves-light btn-large  grey darken-3"
+            >
+              <i className="fa fa-github" /> Github account
             </a>
             <a
-              href="http://linkedin.com/in/viata-fredericks-2580151ab"
               target="__blank"
+              href="https://za.linkedin.com/in/viata-fredericks-2580151ab"
+              className="waves-effect waves-light btn-large  light-blue darken-4 "
             >
-              Linkedin
+              <i className="fa fa-linkedin" /> Linkedin account
             </a>
-            <a href="mailto:viataruth@gmail.com" target="__blank">
-              Email
+            <a
+              target="__blank"
+              href="mailto:viataruth@gmail.com"
+              className="waves-effect waves-light btn-large  deep-orange darken-3"
+            >
+              <i className="fa fa-google" /> Gmail account
             </a>
           </span>
         </section>

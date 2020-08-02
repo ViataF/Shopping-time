@@ -12,7 +12,7 @@ const Register = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/payment");
+      props.history.push("/");
     }
 
     if (error === "User already exists") {

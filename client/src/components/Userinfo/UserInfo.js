@@ -21,19 +21,21 @@ const UserInfo = () => {
   return (
     <Fragment>
       {userInfo !== null && !loading ? (
-        <TransitionGroup>
-          {filtered !== null
-            ? filtered.map((user) => (
-                <CSSTransition key={user._id} timeout={500} classNames="item">
-                  <UserInfoItem user={user} />
-                </CSSTransition>
-              ))
-            : userInfo.map((user) => (
-                <CSSTransition key={user._id} timeout={500} classNames="item">
-                  <UserInfoItem user={user} />
-                </CSSTransition>
-              ))}
-        </TransitionGroup>
+        <div className="user_info">
+          <TransitionGroup>
+            {filtered !== null
+              ? filtered.map((user) => (
+                  <CSSTransition key={user._id} timeout={500} classNames="item">
+                    <UserInfoItem user={user} />
+                  </CSSTransition>
+                ))
+              : userInfo.map((user) => (
+                  <CSSTransition key={user._id} timeout={500} classNames="item">
+                    <UserInfoItem user={user} />
+                  </CSSTransition>
+                ))}
+          </TransitionGroup>
+        </div>
       ) : (
         <Spinner />
       )}

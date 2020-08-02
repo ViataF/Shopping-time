@@ -26,3 +26,12 @@ h2.contact {
   margin: 0;
   text-align: center;
 }
+
+section.contactus form {
+  text-align: left;
+  padding: 30px;
+}
+
+section.contactus form label {
+  color: white;
+}

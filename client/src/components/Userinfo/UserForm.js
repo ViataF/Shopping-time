@@ -87,7 +87,7 @@ const UserForm = () => {
         value={name}
         onChange={onChange}
       />{" "}
-      <label>Name</label>
+      <label>Email</label>
       <input
         type="email"
         placeholder="Email"
@@ -103,7 +103,7 @@ const UserForm = () => {
         value={phone}
         onChange={onChange}
       />{" "}
-      <label>Name</label>
+      <label>Business Name</label>
       <input
         type="text"
         placeholder="BusinessName"
@@ -111,7 +111,7 @@ const UserForm = () => {
         value={businessName}
         onChange={onChange}
       />{" "}
-      <label>Name</label>
+      <label>Description</label>
       <input
         type="text"
         placeholder="Description"
@@ -119,7 +119,7 @@ const UserForm = () => {
         value={description}
         onChange={onChange}
       />{" "}
-      <label>Name</label>
+      <label>Address</label>
       <input
         type="text"
         placeholder="Address"
@@ -136,9 +136,14 @@ const UserForm = () => {
       >
         {" "}
         <option value="catergory">Category</option>
-        <option value="Shop">Shop</option>
-        <option value="Restaurant">Restaurant</option>
-        <option value="Accessories">Accessories</option>
+        <option>Accessories</option>
+        <option>Clothing</option>
+        <option>Shop</option>
+        <option>Grocery store</option>
+        <option>House&Home</option>
+        <option>Malls</option>
+        <option>Restaurants</option>
+        <option>Cellphone shops</option>
       </select>
       <div name="open" onChange={onChange}>
         <label>Open time</label>
@@ -168,7 +173,7 @@ const UserForm = () => {
           value={businessURL}
           onChange={onChange}
         />
-        <label htmlFor="">Logo</label>
+        <label htmlFor="">Logo Url</label>
         <input
           type="url"
           id="logo"

@@ -1,0 +1,14 @@
+.user_info .card {
+  width: 330px;
+  text-align: center;
+  height: 100%;
+}
+
+.card .card-img img {
+  text-align: center;
+  height: 10px;
+}
+
+.card ul li {
+  padding: 5px;
+}

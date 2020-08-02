@@ -36,9 +36,15 @@ const CategorieFilter = () => {
       />
       <select id="category" ref={option} onChange={onChange}>
         <option value="">Select a category</option>
-        <option>Shop</option>
-        <option>Restaurants</option>
         <option>Accessories</option>
+        <option>Clothing</option>
+        <option>Shop</option>
+        <option>Grocery store</option>
+        <option>House&Home</option>
+        <option>Malls</option>
+        <option>Restaurants</option>
+        <option>Cellphone shops</option>
+        <option>Cellphone shop</option>
       </select>
     </form>
   );

@@ -17,7 +17,7 @@ const AllBusinessInfoItem = ({ user }) => {
   return (
     <div className="col s10 m5 l4">
       <div className="item">
-        <div className="card">
+        <div className="card ">
           <div className="card-image">
             <img src={logo} alt="Company logo" />
           </div>
@@ -54,10 +54,11 @@ const AllBusinessInfoItem = ({ user }) => {
                 <i className="fas fa-envelope-open"></i> {address}
               </li>
             )}
+            <li className="divider"></li>
             {businessURL && (
               <li>
                 <a href={businessURL} className="button">
-                  Go to website
+                  See website
                 </a>
               </li>
             )}

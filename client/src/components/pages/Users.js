@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from "react";
 import UserForm from "../Userinfo/UserForm";
 import UsersInfo from "../Userinfo/UserInfo";
 import AuthContext from "../../context/auth/authContext";
+
+import "./Users.css";
 const Users = () => {
   const authContext = useContext(AuthContext);
 
@@ -11,7 +13,7 @@ const Users = () => {
   }, []);
 
   return (
-    <div>
+    <div className="users">
       <UsersInfo />
       <UserForm />
     </div>

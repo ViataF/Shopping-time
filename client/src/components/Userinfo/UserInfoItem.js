@@ -41,47 +41,43 @@ const UserInfoItem = ({ user }) => {
           <li>
             {" "}
             Name:
-            <i className="fas fa-envelope-open"></i> {name}
+            {name}
           </li>
         )}
         {email && (
           <li>
-            Email:<i className="fas fa-envelope-open"></i> {email}
+            Email:
+            {email}
           </li>
         )}
-        {phone && (
-          <li>
-            Phone<i className="fas fa-envelope-open"></i> {phone}
-          </li>
-        )}
+        {phone && <li>Phone: {phone}</li>}
         {category && (
           <li>
             category:
-            <i className="fas fa-envelope-open"></i> {category}
+            {category}
           </li>
         )}
         {open && (
           <li>
             open:
-            <i className="fas fa-envelope-open"></i> {open} - {closed}
+            {open} - {closed}
           </li>
         )}
         {description && (
           <li>
             description:
-            <i className="fas fa-envelope-open"></i> {description}
+            {description}
           </li>
         )}
         {address && (
           <li>
             address:
-            <i className="fas fa-envelope-open"></i> {address}
+            {address}
           </li>
         )}
         {businessURL && (
           <li>
-            Website URL:
-            <i className="fas fa-envelope-open"></i> {businessURL}
+            <a href={businessURL}> Website URL</a>
           </li>
         )}
       </ul>

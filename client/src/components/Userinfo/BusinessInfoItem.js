@@ -14,7 +14,7 @@ const BusinessInfoItem = ({ user }) => {
   } = user;
   return (
     <div className="item">
-      <div className="card">
+      <div className="card business">
         <div className="card-image">
           <img src={logo} alt="Company logo" />
         </div>

@@ -24,6 +24,7 @@ h2.purpose {
   text-align: center;
   font-size: x-large;
   border-bottom: black solid;
+  font-weight: bolder;
 }
 
 /* Open now */
@@ -352,7 +353,7 @@ ul.list {
   }
 
   .item {
-    width: 27vw;
+    width: 28vw;
   }
 
   .item .card {

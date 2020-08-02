@@ -79,8 +79,8 @@ const Navigation = () => {
             <i className="material-icons black-text">menu</i>
           </a>
           <ul className="hide-on-med-and-down">
-            {Personal}
             {isAuthenticated ? authLinks : business}
+            {Personal}
           </ul>
         </div>
         <ul id="dropdown1" className="dropdown-content">

@@ -1,0 +1,48 @@
+.about-section {
+  height: 150vh;
+  width: 100vw;
+  text-align: center;
+  background-image: url("../layout/images/clay-banks-Ox6SW103KtM-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.about-section section {
+  height: 150vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.336);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section aside {
+  padding: 0 20vw;
+  font-size: larger;
+}
+
+section .container.purpose {
+  height: 0;
+  margin-bottom: 50px;
+}
+
+h2.purpose {
+  color: black;
+}
+h2.aboutUs {
+  margin: 0;
+  padding: 10px;
+}
+
+p.about {
+  font-size: x-large;
+  color: black;
+  font-weight: bolder;
+}
+
+span.name {
+  color: black;
+  font-weight: bolder;
+}

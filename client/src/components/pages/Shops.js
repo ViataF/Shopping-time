@@ -7,6 +7,7 @@ const Shops = () => {
   return (
     <div>
       <CategorieFilter />
+      <h3 className="shops">All Shops</h3>
       <AllBusinessInfo />
     </div>
   );
