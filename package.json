@@ -1,5 +1,5 @@
 {
-  "name": "shopping-time",
+  "name": "seekers_and_finders",
   "version": "1.0.0",
   "description": "Place and time app",
   "main": "server.js",
@@ -27,5 +27,6 @@
   "devDependencies": {
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "proxy": "http://localhost:5000/"
 }
