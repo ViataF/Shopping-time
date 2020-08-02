@@ -7,6 +7,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Alerts from "./components/layout/Alert";
 import Contact from "./components/pages/Contact";
+import Payment from "./components/pages/Payment";
 import PrivateRoute from "./components/routing/PrivateRoute";
 
 import UserInfoState from "./context/user_info/UserInfoState";
@@ -43,6 +44,7 @@ const App = () => {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/shops" component={Shops} />
+                <Route exact path="/payment" component={Payment} />
                 <PrivateRoute exact path="/users" component={User} />
               </Switch>
 
