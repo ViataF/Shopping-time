@@ -17,7 +17,7 @@ const Navigation = () => {
 
   const authLinks = (
     <Fragment>
-      <li>Hello {user && user.name}</li>
+      <li className="black-text">Hello {user && user.name}</li>
       <li>
         <a onClick={onLogout} href="#!">
           <span className="hide-sm">Logout</span>
@@ -79,8 +79,8 @@ const Navigation = () => {
             <i className="material-icons black-text">menu</i>
           </a>
           <ul className="hide-on-med-and-down">
-            {isAuthenticated ? authLinks : business}
             {Personal}
+            {isAuthenticated ? authLinks : guestLinks}
           </ul>
         </div>
         <ul id="dropdown1" className="dropdown-content">

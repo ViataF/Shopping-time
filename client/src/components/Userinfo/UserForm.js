@@ -76,7 +76,7 @@ const UserForm = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h2 className="white-text">
+      <h2 className="black-text">
         {current ? "Edit Information" : "Add Information"}
       </h2>
       <label>Name</label>

@@ -14,6 +14,7 @@ const Users = () => {
 
   return (
     <div className="users">
+      <h3 className="business-card">Your Business Card</h3>
       <UsersInfo />
       <UserForm />
     </div>
